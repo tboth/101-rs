@@ -5,7 +5,7 @@ fn main() {
 
     get_char(data);
 
-    string_uppercase(&data);
+    string_uppercase(&mut data);
 }
 
 // Should not take ownership
@@ -14,8 +14,8 @@ fn get_char(data: String) -> char {
 }
 
 // Should take ownership
-fn string_uppercase(mut data: &String) {
-    data = &data.to_uppercase();
+fn string_uppercase(data: &mut String) {
+    data.to_uppercase();
 
     println!("{}", data);
 }
